@@ -29,7 +29,7 @@ export default async function Home() {
         <div className="content_decide">
           <div className="details_decide">
             <h2 ><span>Welcome, esteemed educator! As a teacher, you hold the power to inspire, educate, and shape the minds of tomorrow.</span></h2>
-            <Link href="/home"><button class="designful-button">Join as a Teacher</button></Link>
+            <Link href="/home"><button className="designful-button">Join as a Teacher</button></Link>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default async function Home() {
         <div className="content_decide">
           <div className="details_decide">
             <h2 ><span>Unlock the doors to knowledge and endless possibilities as you embark on your educational journey</span></h2>
-            <Link href="/home"><button class="designful-button">Join as a Student</button></Link>
+            <Link href="/home"><button className="designful-button">Join as a Student</button></Link>
           </div>
         </div>
       </div>

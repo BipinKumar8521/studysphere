@@ -25,7 +25,7 @@
 
 
 import React from 'react';
-import styles from './styles.css';
+import './styles.css';
 import Image from 'next/image';
 import Link from 'next/link';
 
