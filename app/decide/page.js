@@ -1,8 +1,24 @@
 import Link from 'next/link';
 import './styles.css'; // Import the CSS file
 import Image from 'next/image'; // Import the next/image component 
+import { auth, currentUser } from "@clerk/nextjs/server";
+import axios from 'axios';
 
-export default function Home() {
+export default async function Home() {
+
+  const { userId } = auth();
+
+  console.log(userId);
+  const user = await currentUser();
+
+  console.log(user.emailAddresses[0].emailAddress);
+  const email_id = user.emailAddresses[0].emailAddress;
+
+  const response = await axios.post('http://localhost:3000/api/user', {
+    email_id: email_id
+  });
+
+
   return (
     <div className="container_decide">
       <div className="cards_decide">
@@ -17,20 +33,20 @@ export default function Home() {
           </div>
         </div>
       </div>
-      
+
       <div className="cards_decide">
         <div className="imgBx_decide">
           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf-9hjHUZvGyX8GT4ly3b168-S0EYr8tdvvA2ZV2MwhQ&s" />
         </div>
         <div className="content_decide">
           <div className="details_decide">
-          <h2 ><span>Unlock the doors to knowledge and endless possibilities as you embark on your educational journey</span></h2>
+            <h2 ><span>Unlock the doors to knowledge and endless possibilities as you embark on your educational journey</span></h2>
             <Link href="/home"><button class="designful-button">Join as a Student</button></Link>
           </div>
         </div>
       </div>
 
-      
+
     </div>
   );
 }
