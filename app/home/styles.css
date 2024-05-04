@@ -1,5 +1,3 @@
-/* styles.css */
-
 .main-container{
     margin:0px;
     padding: 0px;
@@ -46,27 +44,25 @@ ul {
     margin-left: auto;
     margin-right: auto;
 }
-/* Small */
+
 @media (min-width: 768px) {
     .container-home {
       width: 750px;
     }
 }
-/* Medium */
+
 @media (min-width: 992px) {
     .container-home {
       width: 970px;
     }
 }
-/* Large */
+
 @media (min-width: 1200px) {
     .container-home {
       width: 1170px;
     }
 }
-/* End Global Rules */
 
-/* Start Landing Page */
 .landing-page header {
     min-height: 80px;
     display: flex;
@@ -173,7 +169,6 @@ ul {
 .landing-page .content .image img {
     max-width: 100%;
 }
-/* End Landing Page */
 
 .main-image {
     width: 600px;
@@ -182,3 +177,30 @@ ul {
 h1, p {
     color: white;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

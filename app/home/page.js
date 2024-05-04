@@ -1,23 +1,3 @@
-// import { UserButton, UserProfile } from "@clerk/nextjs";
-// import { auth, currentUser } from "@clerk/nextjs/server";
-
-// export default async function Page() {
-//     const { userId } = auth();
-
-//     console.log(userId);
-//     const user = await currentUser();
-
-//     console.log(user);
-
-//     return (
-//         <div>
-//             {/* <h1>Dashboard</h1> */}
-//             < UserProfile/>
-//             <UserButton/>
-//         </div>
-//     )
-// }
-
 import React from "react";
 import "./styles.css";
 import Image from "next/image";
