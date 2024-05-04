@@ -18,16 +18,10 @@
 //     )
 // }
 
-
-
-
-
-
-
-import React from 'react';
-import './styles.css';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import "./styles.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const Page = () => {
   return (
@@ -39,7 +33,12 @@ const Page = () => {
         <header>
           <div className="container">
             {/* <a href="#" className="logo">Your <b>Website</b></a> */}
-            <Image src="/images/StudySphere_Logo.png" alt="Logo" width={150} height={150} />
+            <Image
+              src="/images/StudySphere_Logo.png"
+              alt="Logo"
+              width={150}
+              height={150}
+            />
             <ul className="links">
               {/* <li>Home</li> */}
               <li>About Us</li>
@@ -53,19 +52,28 @@ const Page = () => {
           <div className="container">
             <div className="info">
               <h1>Study Sphere</h1>
-              <p>Unlock your potential with STUDYSPHERE: Where students connect with expert teachers in an immersive online learning experience.</p>
+              <p>
+                Unlock your potential with STUDYSPHERE: Where students connect
+                with expert teachers in an immersive online learning experience.
+              </p>
               <Link href="/Sign-up">
-              <button>Signup</button>
+                <button>Signup</button>
               </Link>
               <Link href="/Sign-in">
-              <button style={{ marginLeft: '10px' }}>Signin</button>
+                <button style={{ marginLeft: "10px" }}>Signin</button>
               </Link>
-              <Link href="/Registration-form">
-              <button style={{ marginLeft: '10px' }}>Registration form </button>
+              <Link href="/Registration-form/1">
+                <button style={{ marginLeft: "10px" }}>
+                  Registration form{" "}
+                </button>
               </Link>
             </div>
             <div className="image">
-              <img className="main-image" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-working-using-vr-tech-3840669-3202986.png?f=webp" alt="Main" />
+              <img
+                className="main-image"
+                src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-working-using-vr-tech-3840669-3202986.png?f=webp"
+                alt="Main"
+              />
             </div>
           </div>
         </div>
@@ -73,6 +81,6 @@ const Page = () => {
       {/* End Landing Page */}
     </div>
   );
-}
+};
 
 export default Page;
