@@ -31,7 +31,7 @@ const Page = () => {
       {/* Start Landing Page */}
       <div className="landing-page">
         <header>
-          <div className="container">
+          <div className="container-home">
             {/* <a href="#" className="logo">Your <b>Website</b></a> */}
             <Image
               src="/images/StudySphere_Logo.png"
@@ -49,7 +49,7 @@ const Page = () => {
           </div>
         </header>
         <div className="content">
-          <div className="container">
+          <div className="container-home">
             <div className="info">
               <h1>Study Sphere</h1>
               <p>
