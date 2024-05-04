@@ -3,6 +3,7 @@ import './styles.css'; // Import the CSS file
 import Image from 'next/image'; // Import the next/image component 
 import { auth, currentUser } from "@clerk/nextjs/server";
 import axios from 'axios';
+import { UserButton } from '@clerk/nextjs';
 
 export default async function Home() {
 
@@ -10,9 +11,11 @@ export default async function Home() {
 
   console.log(userId);
   const user = await currentUser();
+  console.log(user);
 
   console.log(user.emailAddresses[0].emailAddress);
   const email_id = user.emailAddresses[0].emailAddress;
+  
 
   const response = await axios.post('http://localhost:3000/api/user', {
     email_id: email_id
@@ -21,9 +24,10 @@ export default async function Home() {
 
   return (
     <div className="container_decide">
+      <UserButton />
       <div className="cards_decide">
         <div className="imgBx_decide">
-          <img src=" https://www.shutterstock.com/image-vector/cute-male-teacher-cartoon-character-260nw-2342219157.jpg" />
+          {/* <img src=" https://www.shutterstock.com/image-vector/cute-male-teacher-cartoon-character-260nw-2342219157.jpg" /> */}
           <Image src="/images/30.png" alt="Logo" width={150} height={150} />
         </div>
         <div className="content_decide">
