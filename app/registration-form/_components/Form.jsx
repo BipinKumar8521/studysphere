@@ -1,50 +1,62 @@
+"use server";
+
 import React from "react";
 import "./Form.css";
 import { redirect } from "next/navigation";
 
-const Form = ({role}) => {
+const Form = ({ role }) => {
+  if (role !== "1" && role !== "2") {
+    redirect("/404");
+  }
 
-    if(role !== "1" && role !== "2"){
-      redirect("/404");
-    }
-    
+  const handleForm = (formData) => {
+    "use server";
+
+    console.log(formData);
+  };
+
   return (
     <div className="container">
       <div className="login_box">
-        <h1>Fill the details</h1>
-        <form action="">
+        <h1 className="form-heading">Fill the details</h1>
+        <form action={handleForm}>
           <div className="input_box">
-            <input type="text" required />
+            <input
+              name="role"
+              type="text"
+              value={role === "1" ? "Student" : "Teacher"}
+              required
+            />
+            <label htmlFor="">Role</label>
+          </div>
+          <div className="input_box">
+            <input name="name" type="text" required />
             <label htmlFor="">Name</label>
           </div>
           <div className="input_box">
             {/* <label for="">Class</label> */}
-            <select name="" id="">
-              <option value="">Select Class</option>
-              <option value="">1st</option>
-              <option value="">2nd</option>
-              <option value="">3rd</option>
-              <option value="">4th</option>
-              <option value="">5th</option>
-              <option value="">6th</option>
-              <option value="">7th</option>
-              <option value="">8th</option>
-              <option value="">9th</option>
-              <option value="">10th</option>
-              <option value="">11th</option>
-              <option value="">12th</option>
+            <select name="class" id="">
+              <option value="0">Select Class</option>
+              <option value="5">5th</option>
+              <option value="6">6th</option>
+              <option value="7">7th</option>
+              <option value="8">8th</option>
+              <option value="9">9th</option>
+              <option value="10">10th</option>
+              <option value="11">11th</option>
+              <option value="12">12th</option>
             </select>
           </div>
           <div className="input_box">
-            <input type="text" required />
+            <input name="school/college name" type="text" required />
             <label htmlFor="">School/College Name</label>
           </div>
           <div className="input_box">
-            <input type="text" required />
+            <input name="subjects" type="text" required />
             <label htmlFor="">Subjects</label>
           </div>
           <div className="input_box">
-            <input type="text" required />
+            <input name="target exam" type="text" required />
             <label htmlFor="">Target Exam</label>
           </div>
           <div className="login">

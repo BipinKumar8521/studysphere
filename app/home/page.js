@@ -60,6 +60,9 @@ const Page = () => {
               <Link href="/Sign-in">
               <button style={{ marginLeft: '10px' }}>Signin</button>
               </Link>
+              <Link href="/Registration-form">
+              <button style={{ marginLeft: '10px' }}>Registration form </button>
+              </Link>
             </div>
             <div className="image">
               <img className="main-image" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-working-using-vr-tech-3840669-3202986.png?f=webp" alt="Main" />
