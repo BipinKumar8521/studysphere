@@ -62,7 +62,7 @@ const Page = () => {
               <Link href="/Sign-in">
                 <button style={{ marginLeft: "10px" }}>Signin</button>
               </Link>
-              <Link href="/Registration-form/1">
+              <Link href="/registration-form/2">
                 <button style={{ marginLeft: "10px" }}>
                   Registration form{" "}
                 </button>
