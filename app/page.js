@@ -1,5 +1,4 @@
 import React from "react";
-import "./global.css";
 import Image from "next/image";
 import Link from "next/link";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
