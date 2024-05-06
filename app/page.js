@@ -1,5 +1,5 @@
 import React from "react";
-import "./global.css";
+import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { SignedIn, SignedOut } from "@clerk/nextjs";
@@ -54,6 +54,9 @@ const Page = () => {
                   <button style={{ marginLeft: "10px" }}>Dashboard</button>
                 </Link>
               </SignedIn>
+              <Link href="/payment">
+                  <button style={{ marginLeft: "10px" }}>Payment</button>
+                </Link>
             </div>
             <div className="image">
               <img
