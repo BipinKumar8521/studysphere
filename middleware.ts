@@ -5,9 +5,6 @@ const isProtectedRoute = createRouteMatcher([
   '/decide(.*)',
   '/registration-form(.*)',
 ]);
-const isNotSignInRoute = createRouteMatcher([
-
-]);
 
 export default clerkMiddleware((auth, req) => {
   if (!auth().userId && isProtectedRoute(req)) {
@@ -16,12 +13,7 @@ export default clerkMiddleware((auth, req) => {
 
     return auth().redirectToSignIn();
   }
-  if (isNotSignInRoute(req)) {
 
-    // Add custom logic to run before redirecting
- const orgSelection = new URL("/dashboard", req.url);
-      return NextResponse.redirect(orgSelection);
-  }
 });
 
 export const config = { matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)']};
