@@ -7,7 +7,6 @@ const RegistrationForm = ({ params }) => {
 
   return(
       <Form role={params.slug} />
-
   )
 
 };

@@ -33,10 +33,10 @@ const Form = ({ role }) => {
             <input name="name" type="text" required />
             <label htmlFor="">Name</label>
           </div>
-          <div className="input_box">
-            {/* <label for="">Class</label> */}
-            <select name="class" id="">
-              <option value="0">Select Class</option>
+          <div className="input_box select-container">
+            <label for="">Class</label>
+            <select name="class" id="" required>
+              <option value="">Select Class</option>
               <option value="5">5th</option>
               <option value="6">6th</option>
               <option value="7">7th</option>

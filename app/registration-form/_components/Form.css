@@ -48,19 +48,6 @@
     font-size: 18px;
 }
 
-.input_box select {
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    outline: none;
-    border: none;
-    padding: 0px 20px;
-    background-color: transparent;
-    border-bottom: 1px solid #fff;
-    color: #ffffff;
-    font-size: 18px;
-}
-
 .input_box label {
     position: absolute;
     top: 50%;
@@ -102,4 +89,25 @@
     background-color: transparent;
     color: #fff;
     border: 1px solid #fff;
+}
+
+.select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-container select {
+    height: 30px;
+    box-sizing: border-box;
+    outline: none;
+    padding: 0px 20px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+}
+
+.select-container select option {
+    background-color: rgb(68, 59, 61);
+    color: #fff;
 }
