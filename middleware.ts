@@ -19,7 +19,7 @@ export default clerkMiddleware((auth, req) => {
   if (isNotSignInRoute(req)) {
 
     // Add custom logic to run before redirecting
- const orgSelection = new URL("/dashboard", req.url);
+ const orgSelection = new URL("/dashboard/student", req.url);
       return NextResponse.redirect(orgSelection);
   }
 });
