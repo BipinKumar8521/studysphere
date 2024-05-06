@@ -1,12 +1,11 @@
-import Link from 'next/link';
-import './styles.css'; // Import the CSS file
-import Image from 'next/image'; // Import the next/image component 
+import Link from "next/link";
+import "./styles.css"; // Import the CSS file
+import Image from "next/image"; // Import the next/image component
 import { auth, currentUser } from "@clerk/nextjs/server";
-import axios from 'axios';
-import { UserButton } from '@clerk/nextjs';
+import axios from "axios";
+import { UserButton } from "@clerk/nextjs";
 
 export default async function Home() {
-
   const { userId } = auth();
 
   console.log(userId);
@@ -15,12 +14,10 @@ export default async function Home() {
 
   console.log(user.emailAddresses[0].emailAddress);
   const email_id = user.emailAddresses[0].emailAddress;
-  
 
-  const response = await axios.post('http://localhost:3000/api/user', {
-    email_id: email_id
+  const response = await axios.post("http://localhost:3000/api/user", {
+    email_id: email_id,
   });
-
 
   return (
     <div className="container_decide">
@@ -32,8 +29,15 @@ export default async function Home() {
         </div>
         <div className="content_decide">
           <div className="details_decide">
-            <h2 ><span>Welcome, esteemed educator! As a teacher, you hold the power to inspire, educate, and shape the minds of tomorrow.</span></h2>
-            <Link href="/home"><button className="designful-button">Join as a Teacher</button></Link>
+            <h2>
+              <span>
+                Welcome, esteemed educator! As a teacher, you hold the power to
+                inspire, educate, and shape the minds of tomorrow.
+              </span>
+            </h2>
+            <Link href="/registration-form/2">
+              <button className="designful-button">Join as a Teacher</button>
+            </Link>
           </div>
         </div>
       </div>
@@ -44,13 +48,18 @@ export default async function Home() {
         </div>
         <div className="content_decide">
           <div className="details_decide">
-            <h2 ><span>Unlock the doors to knowledge and endless possibilities as you embark on your educational journey</span></h2>
-            <Link href="/home"><button className="designful-button">Join as a Student</button></Link>
+            <h2>
+              <span>
+                Unlock the doors to knowledge and endless possibilities as you
+                embark on your educational journey
+              </span>
+            </h2>
+            <Link href="/registration-form/1">
+              <button className="designful-button">Join as a Student</button>
+            </Link>
           </div>
         </div>
       </div>
-
-
     </div>
   );
 }
