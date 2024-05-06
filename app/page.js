@@ -6,7 +6,9 @@ import { SignedIn, SignedOut } from "@clerk/nextjs";
 
 const Page = () => {
   return (
+
     <div className="main-container">
+      
       <div className="blur-circle1"></div>
       <div className="blur-circle2"></div>
       {/* Start Landing Page */}
@@ -55,8 +57,8 @@ const Page = () => {
                 </Link>
               </SignedIn>
               <Link href="/payment">
-                  <button style={{ marginLeft: "10px" }}>Payment</button>
-                </Link>
+                <button style={{ marginLeft: "10px" }}>Payment</button>
+              </Link>
             </div>
             <div className="image">
               <img
