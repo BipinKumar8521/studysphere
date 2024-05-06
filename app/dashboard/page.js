@@ -38,7 +38,7 @@ const Index = () => {
                 <td>
                     <h3>{item.name}</h3>
                     <p>Category: {item.category}</p>
-                    <p>Price: ${item.price}</p>
+                    <p>Price: Rs {item.price}</p>
                 </td>
                 <td>
                     <div>
@@ -106,12 +106,12 @@ const Index = () => {
 
     return (
         <div>
-            <h1>Food Ordering Dashboard</h1>
+            {/* <h1>Student Dashboard</h1> */}
             <div className="content">
                 <div>
                     <div>
                         <label htmlFor="search">Search:</label>
-                        <input type="text" id="search" placeholder="Search for food..." onChange={handleSearch} />
+                        <input type="text" id="search" placeholder="Search for Subject" onChange={handleSearch} />
                     </div>
 
                     <div>
@@ -140,7 +140,7 @@ const Index = () => {
                                         <strong>{item.name}</strong>
                                     </td>
                                     <td>
-                                        <span className="quantity">{item.totalQuantity}</span> x ${item.price}
+                                        <span className="quantity">{item.totalQuantity}</span> x Rs {item.price}
                                     </td>
                                     <td>
                                         <button onClick={() => removeFromOrder(item.id)}>Remove</button>
@@ -149,7 +149,7 @@ const Index = () => {
                             ))}
                         </table>
                         <div id="total-amount">
-                            <h4>Total Amount: ${totalAmount.toFixed(2)}</h4>
+                            <h4>Total Amount: Rs {totalAmount.toFixed(2)}</h4>
                         </div>
                         <button onClick={placeOrder}>Place Order</button>
                     </div>

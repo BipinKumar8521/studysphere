@@ -6,6 +6,7 @@
 h1 {
     font-size: 50px;
     padding: 20px;
+    color: rgb(0, 0, 0);
 }
 
 body {
@@ -20,6 +21,8 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background-color: #c3d69b;
+    padding-top: 140px;
 }
 
 img {
@@ -60,7 +63,7 @@ img {
     background-color: black;
     display: flex;
     flex-direction: column;
-    color: white;
+    color: rgb(217, 216, 196);
     align-items: center;
     min-height: 400px;
     margin-top: 50px;
@@ -112,18 +115,22 @@ label[for='search'],
 input[type='text'] {
     display: block;
     margin-bottom: 5px;
+    border-radius: 100px;
+    outline: none;
 }
 
 input[type='text'] {
     width: 100%;
     padding: 8px;
     box-sizing: border-box;
+    border-radius: 100px;
 }
 
 label[for='sort'],
 select {
     display: block;
     margin-bottom: 5px;
+    border-radius: 100px;
 }
 
 select {
