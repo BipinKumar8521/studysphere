@@ -21,7 +21,6 @@ export default async function Home() {
 
   return (
     <div className="container_decide">
-      <UserButton />
       <div className="cards_decide">
         <div className="imgBx_decide">
           {/* <img src=" https://www.shutterstock.com/image-vector/cute-male-teacher-cartoon-character-260nw-2342219157.jpg" /> */}
@@ -54,12 +53,12 @@ export default async function Home() {
                 embark on your educational journey
               </span>
             </h2>
-            <Link href="/registration-form/1">
-              <button className="designful-button">Join as a Student</button>
-            </Link>
           </div>
         </div>
       </div>
+      <Link href="/registration-form/1">
+        <button className="designful-button">Join as a Student</button>
+      </Link>
     </div>
   );
 }

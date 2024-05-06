@@ -1,4 +1,9 @@
-import { SignInButton, SignOutButton, UserProfile } from "@clerk/nextjs";
+import {
+  SignInButton,
+  SignOutButton,
+  UserProfile,
+  UserButton,
+} from "@clerk/nextjs";
 import "./styles.css";
 
 export default function Home() {
@@ -94,7 +99,7 @@ export default function Home() {
         </div>
       </div>
       <div className="profile">
-        <UserProfile />
+        <UserButton />
       </div>
     </>
   );

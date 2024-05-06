@@ -13,6 +13,7 @@ const Form = ({ role }) => {
     "use server";
 
     console.log(formData);
+    redirect("/dashboard");
   };
 
   return (
