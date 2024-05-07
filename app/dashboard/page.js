@@ -1,9 +1,13 @@
+"use client"
+
 // pages/index.js
 
 import "./styles.css"
 import { UserButton } from '@clerk/nextjs';
-
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
 export default function Home() {
+    const router = useRouter();
     return (
         <div>
 
@@ -30,7 +34,7 @@ export default function Home() {
                         <p>Learn the fundamentals of HTML including tags, attributes, and semantic markup.</p>
                         <div className="course-details" style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div><p>Price: $50</p> <p>Instructor: Asish Sir</p> </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button class="btn-5"><span>Buy Now</span></button></div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button className="btn-5" onClick={() => router.push('/payment')}><span>Buy Now</span></button></div>
                         </div>
                     </div>
                     {/* CSS Course */}
@@ -40,7 +44,7 @@ export default function Home() {
                         <p>Master CSS styling techniques such as selectors, box model, flexbox, and grid.</p>
                         <div className="course-details" style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div><p>Price: $50</p> <p>Instructor: Asish Sir</p> </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button class="btn-5"><span>Buy Now</span></button></div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button className="btn-5" onClick={() => router.push('/payment')}><span>Buy Now</span></button></div>
                         </div>
                     </div>
                     {/* JavaScript Course */}
@@ -50,7 +54,7 @@ export default function Home() {
                         <p>Explore the core concepts of JavaScript including variables, functions, and loops.</p>
                         <div className="course-details" style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div><p>Price: $50</p> <p>Instructor: Asish Sir</p> </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button class="btn-5"><span>Buy Now</span></button></div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button className="btn-5" onClick={() => router.push('/payment')}><span>Buy Now</span></button></div>
                         </div>
                     </div>
                     {/* React Course */}
@@ -60,7 +64,7 @@ export default function Home() {
                         <p>Build dynamic web applications with React.js, including state management.</p>
                         <div className="course-details" style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div><p>Price: $50</p> <p>Instructor: Asish Sir</p> </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button class="btn-5"><span>Buy Now</span></button></div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button className="btn-5" onClick={() => router.push('/payment')}><span>Buy Now</span></button></div>
                         </div>
 
                     </div>
@@ -71,7 +75,7 @@ export default function Home() {
                         <p>Discover the power of Next.js for server-side rendering, routing, and API integration.</p>
                         <div className="course-details" style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div><p>Price: $50</p> <p>Instructor: Asish Sir</p> </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button class="btn-5"><span>Buy Now</span></button></div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button className="btn-5" onClick={() => router.push('/payment')}><span>Buy Now</span></button></div>
                         </div>
                     </div>
                     {/* TypeScript Course */}
@@ -81,7 +85,7 @@ export default function Home() {
                         <p>Learn TypeScript to enhance the development of scalable web applications.</p>
                         <div className="course-details" style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div><p>Price: $50</p> <p>Instructor: Asish Sir</p> </div>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button class="btn-5"><span>Buy Now</span></button></div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}><button className="btn-5" onClick={() => router.push('/payment')}><span>Buy Now</span></button></div>
                         </div>
                     </div>
                 </div>

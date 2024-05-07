@@ -43,22 +43,19 @@ const Page = () => {
               <SignedOut>
                 <div>
                   <Link href="/Sign-up">
-                    <button>Signup</button>
+                    <button class="btn-5">Signup</button>
                   </Link>
                   <Link href="/Sign-in">
-                    <button style={{ marginLeft: "10px" }}>Signin</button>
+                    <button  style={{ marginLeft: "10px" ,marginTop:"10px"}} class="btn-5">Signin</button>
                   </Link>
                 </div>
               </SignedOut>
 
               <SignedIn>
                 <Link href="/dashboard">
-                  <button style={{ marginLeft: "10px" }}>Dashboard</button>
+                  <button style={{ marginLeft: "10px" }} class="btn-5">Dashboard</button>
                 </Link>
               </SignedIn>
-              <Link href="/payment">
-                <button style={{ marginLeft: "10px" }}>Payment</button>
-              </Link>
             </div>
             <div className="image">
               <img
