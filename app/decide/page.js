@@ -23,7 +23,6 @@ export default async function Home() {
     <div className="container_decide">
       <div className="cards_decide">
         <div className="imgBx_decide">
-          {/* <img src=" https://www.shutterstock.com/image-vector/cute-male-teacher-cartoon-character-260nw-2342219157.jpg" /> */}
           <Image src="/images/30.png" alt="Logo" width={150} height={150} />
         </div>
         <div className="content_decide">
