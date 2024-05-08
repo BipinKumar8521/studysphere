@@ -1,21 +1,18 @@
 "use client";
 import React, { Suspense } from "react";
 import Buy from "./Buy";
-import { useRouter  } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import Loading from "@/app/loading";
 
-
 const BuyProduct = () => {
-
-  const router = useRouter()
-
+  const router = useRouter();
 
   const makePayment = async ({ productId = null }) => {
     // "use server"
     const key = process.env.RAZORPAY_API_KEY;
     console.log(key);
     // Make API call to the serverless API
-    const data = await fetch("http://localhost:3000/api/razorpay");
+    const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/razorpay`);
     const { order } = await data.json();
     console.log(order.id);
     const options = {
@@ -30,31 +27,30 @@ const BuyProduct = () => {
         // if (response.length==0) return <Loading/>;
         console.log(response);
 
-        const data = await  fetch("http://localhost:3000/api/paymentverify", {
-          method: "POST",
-          // headers: {
-          //   // Authorization: 'YOUR_AUTH_HERE'
-          // },
-          body: JSON.stringify({
-            razorpay_payment_id: response.razorpay_payment_id,
-            razorpay_order_id: response.razorpay_order_id,
-            razorpay_signature: response.razorpay_signature,
-          }),
-        });
-
-
+        const data = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/paymentverify`,
+          {
+            method: "POST",
+            // headers: {
+            //   // Authorization: 'YOUR_AUTH_HERE'
+            // },
+            body: JSON.stringify({
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_signature: response.razorpay_signature,
+            }),
+          }
+        );
 
         const res = await data.json();
 
-        console.log("response verify==",res)
+        console.log("response verify==", res);
 
-        if(res?.message=="success")
-        {
-
-
-          console.log("redirected.......")
-          router.push("/paymentsuccess?paymentid="+response.razorpay_payment_id)
-
+        if (res?.message == "success") {
+          console.log("redirected.......");
+          router.push(
+            "/paymentsuccess?paymentid=" + response.razorpay_payment_id
+          );
         }
 
         // Validate payment at server - using webhooks is a better idea.
@@ -79,8 +75,8 @@ const BuyProduct = () => {
 
   return (
     <>
-    <Suspense fallback={<Loading/>}>
-      <Buy makePayment={makePayment} />
+      <Suspense fallback={<Loading />}>
+        <Buy makePayment={makePayment} />
       </Suspense>
     </>
   );

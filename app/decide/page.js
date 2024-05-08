@@ -15,7 +15,7 @@ export default async function Home() {
   console.log(user.emailAddresses[0].emailAddress);
   const email_id = user.emailAddresses[0].emailAddress;
 
-  const response = await axios.post("http://localhost:3000/api/user", {
+  const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
     email_id: email_id,
   });
 
