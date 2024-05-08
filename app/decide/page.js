@@ -53,12 +53,12 @@ export default async function Home() {
                 embark on your educational journey
               </span>
             </h2>
+            <Link href="/registration-form/1">
+              <button className="designful-button">Join as a Student</button>
+            </Link>
           </div>
         </div>
       </div>
-      <Link href="/registration-form/1">
-        <button className="designful-button">Join as a Student</button>
-      </Link>
     </div>
   );
 }
