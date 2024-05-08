@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server';
 const isProtectedRoute = createRouteMatcher([
   '/dashboard(.*)',
   '/decide(.*)',
-  '/registration-form(.*)',
+  // '/registration-form(.*)',
 ]);
 
 export default clerkMiddleware((auth, req) => {
