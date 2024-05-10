@@ -53,7 +53,7 @@ const Page = () => {
 
               <SignedIn>
                 <Link href="/dashboard">
-                  <button style={{ marginLeft: "10px" }} class="btn-5">Dashboard</button>
+                  <button class="btn-5">Dashboard</button>
                 </Link>
               </SignedIn>
             </div>
