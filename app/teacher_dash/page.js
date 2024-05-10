@@ -18,7 +18,7 @@ export default function Home() {
 
             <nav>
                 {/* <UserButton /> */}
-                <a href="#">Add Course</a>
+                <a href="/upload">Add Course</a>
                 {/* <a href="#">About</a>
                 <a href="#">Contact</a> */}
             </nav>
