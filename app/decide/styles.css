@@ -1,10 +1,15 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Josefin Sans', sans-serif;
+
+
+
+.landing-page {
+    background-color: rgb(143, 205, 223);
+    text-align: center;
+    padding-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ab13ec;
 }
 
 .container_decide {
@@ -27,7 +32,7 @@
     position: relative;
     width: 300px;
     height: 400px;
-    background: linear-gradient(#2196f3, #2196f3 30%, #1d3548 30%, #1d3548);
+    background: rgb(201, 224, 235);
     margin: 10px;
     border-radius: 20px;
     overflow: hidden;
@@ -49,7 +54,7 @@
 }
 
 .cards_decide:hover .imgBx_decide {
-    transform: translateY(30px) scale(0.5);
+    transform: translateY(30px) scale(0.4);
 }
 
 .imgBx_decide img {
@@ -90,21 +95,24 @@
 
 
 .designful-button {
+    margin: 20px;
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
     color: #fff;
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
+    /* Green */
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .designful-button:hover {
-    background-color: #45a049; /* Darker Green */
-  }
-  
+}
+
+.designful-button:hover {
+    background-color: #45a049;
+    /* Darker Green */
+}
+
 .details_decide h2 {
     color: #502020;
     font-size: 1.5em;
