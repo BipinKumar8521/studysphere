@@ -1,17 +1,26 @@
+"use server";
+
+import connectDB from "@/app/db/connectDB";
+import Teacher from "@/app/db/schema/teacher";
 import { NextResponse } from "next/server";
 
-export async function POST(request) {
-    const { email_id } = await request.json();
-    console.log("From backend");
-    console.log(email_id);
-    
-    const email = email_id;
+//GET request
+export async function GET(request) {
+  await connectDB();
 
-    // try {
-    //     const user = await User.create({ email });
-    //     res.status(201).json({ success: true, data: user });
-    // } catch (error) {
-    //     res.status(400).json({ success: false, error: error.message });
-    // }
-    return NextResponse.json({ email_id });
+  return NextResponse.json({ message: "Hello from the backend" });
+}
+
+export async function POST(req) {
+  try {
+    await connectDB();
+    const data = await req.json();
+    await Teacher.create(data);
+    return NextResponse.json({
+      message: "successfully created",
+    });
+  } catch (err) {
+    console.log(err);
+    return NextResponse.json({ message: "Error" }, { status: 500 });
+  }
 }

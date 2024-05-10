@@ -15,10 +15,6 @@ export default async function Home() {
   console.log(user.emailAddresses[0].emailAddress);
   const email_id = user.emailAddresses[0].emailAddress;
 
-  const response = await axios.post("http://localhost:3000/api/user", {
-    email_id: email_id,
-  });
-
   return (
     <div className="container_decide">
       <div className="cards_decide">
