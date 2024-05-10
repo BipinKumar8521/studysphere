@@ -5,10 +5,7 @@ const Page = () => {
     return (
         <div className="container">
             <header>
-                <h1 id="title">Our Services Survey Form</h1>
-                <p id="description">
-                    Thank you for taking the time to help us improve the platform
-                </p>
+                <h1 id="title">Upload Course Form</h1>
             </header>
             <main>
                 <form id="survey-form" action="#" method="post">
