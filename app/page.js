@@ -2,13 +2,11 @@ import React from "react";
 import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
-import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 const Page = () => {
   return (
-
     <div className="main-container">
-      
       <div className="blur-circle1"></div>
       <div className="blur-circle2"></div>
       {/* Start Landing Page */}
@@ -46,15 +44,27 @@ const Page = () => {
                     <button className="btn-5">Signup</button>
                   </Link>
                   <Link href="/Sign-in">
-                    <button  style={{ marginLeft: "10px" ,marginTop:"10px"}} className="btn-5">Signin</button>
+                    <button
+                      style={{ marginLeft: "10px", marginTop: "10px" }}
+                      className="btn-5"
+                    >
+                      Signin
+                    </button>
                   </Link>
                 </div>
               </SignedOut>
 
               <SignedIn>
                 <Link href="/dashboard">
-                  <button style={{ marginLeft: "10px" }} className="btn-5">Dashboard</button>
+                  <button style={{ marginLeft: "10px" }} className="btn-5">
+                    Dashboard
+                  </button>
                 </Link>
+
+                <SignOutButton
+                  style={{ marginLeft: "10px" }}
+                  className="btn-5"
+                />
               </SignedIn>
             </div>
             <div className="image">
