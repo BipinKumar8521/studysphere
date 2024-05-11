@@ -1,26 +1,33 @@
-"use server";
+"use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Form.css";
 import { redirect } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
 
-const Form = ({ role }) => {
+const Form = ({ role, handleSubmitForm }) => {
   if (role !== "1" && role !== "2") {
     redirect("/404");
   }
+  const [name, setName] = useState("");
 
-  const handleForm = (formData) => {
-    "use server";
+  const user = useUser();
 
-    console.log(formData);
-    redirect("/dashboard");
-  };
+  useEffect(() => {
+    console.log(user);
+    if (!user) {
+      redirect("/sign-in");
+    } else if (user.user) {
+      setName(user.user.fullName);
+      console.log(name);
+    }
+  }, [user]);
 
   return (
     <div className="container">
       <div className="login_box">
         <h1 className="form-heading">Fill the details</h1>
-        <form action={handleForm}>
+        <form action={handleSubmitForm}>
           <div className="input_box">
             <input
               name="role"
@@ -31,7 +38,7 @@ const Form = ({ role }) => {
             <label htmlFor="">Role</label>
           </div>
           <div className="input_box">
-            <input name="name" type="text" required />
+            <input name="name" type="text" defaultValue={name} required />
             <label htmlFor="">Name</label>
           </div>
           {role === "1" ? (
