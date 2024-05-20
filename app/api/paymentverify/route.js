@@ -1,9 +1,6 @@
 import { NextResponse } from "next/server";
 import Razorpay from "razorpay";
-// import shortid from "shortid";
 import crypto from "crypto";
-// import Payment from "../../../database/model/Payment"
-// import dbConnect from '../../../database/database'
 const instance = new Razorpay({
   key_id: process.env.RAZORPAY_API_KEY,
   key_secret: process.env.RAZORPAY_APT_SECRET,

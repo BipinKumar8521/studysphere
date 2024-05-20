@@ -3,13 +3,8 @@ import React, { Suspense } from "react";
 import Buy from "./Buy";
 import { useRouter  } from 'next/navigation';
 import Loading from "@/app/loading";
-
-
 const BuyProduct = () => {
-
   const router = useRouter()
-
-
   const makePayment = async ({ productId = null }) => {
     // "use server"
     const key = process.env.RAZORPAY_API_KEY;
@@ -25,42 +20,26 @@ const BuyProduct = () => {
       amount: order.amount,
       order_id: order.id,
       description: "Online learning platform",
-      // image: logoBase64,
       handler: async function (response) {
-        // if (response.length==0) return <Loading/>;
         console.log(response);
-
         const data = await  fetch("http://localhost:3000/api/paymentverify", {
           method: "POST",
-          // headers: {
-          //   // Authorization: 'YOUR_AUTH_HERE'
-          // },
           body: JSON.stringify({
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_order_id: response.razorpay_order_id,
             razorpay_signature: response.razorpay_signature,
           }),
         });
-
-
-
         const res = await data.json();
 
         console.log("response verify==",res)
 
         if(res?.message=="success")
         {
-
-
           console.log("redirected.......")
           router.push("/paymentsuccess?paymentid="+response.razorpay_payment_id)
 
         }
-
-        // Validate payment at server - using webhooks is a better idea.
-        // alert(response.razorpay_payment_id);
-        // alert(response.razorpay_order_id);
-        // alert(response.razorpay_signature);
       },
       prefill: {
         name: "studysphere",
@@ -76,7 +55,6 @@ const BuyProduct = () => {
       alert("Payment failed. Please try again. Contact support for help");
     });
   };
-
   return (
     <>
     <Suspense fallback={<Loading/>}>
@@ -85,5 +63,4 @@ const BuyProduct = () => {
     </>
   );
 };
-
 export default BuyProduct;

@@ -19,8 +19,6 @@ export async function GET() {
         receipt: shortid.generate(),
         payment_capture,
         notes: {
-            // These notes will be added to your transaction. So you can search it within their dashboard.
-            // Also, it's included in webhooks as well. So you can automate it.
             paymentFor: "testingDemo",
             userId: "100",
             productId: 'P100'
