@@ -7,7 +7,6 @@ import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
 const Page = () => {
   return (
     <div className="main-container">
-
       <div className="blur-circle1"></div>
       <div className="blur-circle2"></div>
       {/* Start Landing Page */}
@@ -45,10 +44,9 @@ const Page = () => {
                     <button className="btn-5">Signup</button>
                   </Link>
                   <Link href="/Sign-in">
-                    <button style={{ marginLeft: "10px", marginTop: "10px" }} class="btn-5">Signin</button>
                     <button
                       style={{ marginLeft: "10px", marginTop: "10px" }}
-                      className="btn-5"
+                      class="btn-5"
                     >
                       Signin
                     </button>
