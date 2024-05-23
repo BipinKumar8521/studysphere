@@ -217,7 +217,7 @@ ul {
 
 
 .btn-5 {
-  width: 130px;
+  width: fit-content;
   height: 40px;
   color: #000000;
   border-radius: 5px;
@@ -232,6 +232,7 @@ ul {
   /* padding: 0; */
   border: none;
   background: rgb(233, 237, 237);
+  padding: 0 20px;
   /* background: linear-gradient(0deg, rgb(7, 234, 3) 0%, rgba(251, 75, 2, 1) 100%); */
 }
 

@@ -1,19 +1,16 @@
 import Link from "next/link";
 import "./styles.css"; // Import the CSS file
 import Image from "next/image"; // Import the next/image component
-import { auth, currentUser } from "@clerk/nextjs/server";
-import axios from "axios";
-import { UserButton } from "@clerk/nextjs";
-
+import { redirect } from "next/navigation";
+import userProfileCompleted from "@/app/utils/userProfileCompleted";
 export default async function Home() {
-  const { userId } = auth();
+  const isUser = await userProfileCompleted();
 
-  console.log(userId);
-  const user = await currentUser();
-  console.log(user);
-
-  console.log(user.emailAddresses[0].emailAddress);
-  const email_id = user.emailAddresses[0].emailAddress;
+  if (isUser) {
+    //redirect to /dashboard
+    console.log("redirected");
+    return redirect("/dashboard");
+  }
 
   return (
     <>
@@ -32,8 +29,8 @@ export default async function Home() {
             <div className="details_decide">
               <h2>
                 <span>
-                  Welcome, esteemed educator! As a teacher, you hold the power to
-                  inspire, educate, and shape the minds of tomorrow.
+                  Welcome, esteemed educator! As a teacher, you hold the power
+                  to inspire, educate, and shape the minds of tomorrow.
                 </span>
               </h2>
               <Link href="/registration-form/2">

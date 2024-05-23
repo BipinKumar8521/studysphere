@@ -3,8 +3,10 @@ import "./globals.css";
 import Image from "next/image";
 import Link from "next/link";
 import { SignOutButton, SignedIn, SignedOut } from "@clerk/nextjs";
+import userProfileCompleted from "@/app/utils/userProfileCompleted";
 
-const Page = () => {
+const Page = async () => {
+  const isUser = await userProfileCompleted();
   return (
     <div className="main-container">
       <div className="blur-circle1"></div>
@@ -54,19 +56,25 @@ const Page = () => {
                 </div>
               </SignedOut>
 
-              <SignedIn>
-                <Link href="/dashboard">
-                  <button class="btn-5">Dashboard</button>
+              {isUser ? (
+                <SignedIn>
+                  <Link href="/dashboard">
+                    <button style={{ marginLeft: "10px" }} className="btn-5">
+                      Dashboard
+                    </button>
+                  </Link>
+                  <SignOutButton
+                    style={{ marginLeft: "10px" }}
+                    className="btn-5"
+                  />{" "}
+                </SignedIn>
+              ) : (
+                <Link href="/decide">
                   <button style={{ marginLeft: "10px" }} className="btn-5">
-                    Dashboard
+                    Complete Profile
                   </button>
                 </Link>
-
-                <SignOutButton
-                  style={{ marginLeft: "10px" }}
-                  className="btn-5"
-                />
-              </SignedIn>
+              )}
             </div>
             <div className="image">
               <img

@@ -6,8 +6,16 @@ import Teacher from "@/app/db/schema/teacher";
 import Student from "@/app/db/schema/student";
 import { currentUser } from "@clerk/nextjs/server";
 import { isRedirectError } from "next/dist/client/components/redirect";
+import userProfileCompleted from "@/app/utils/userProfileCompleted";
 
-const RegistrationForm = ({ params }) => {
+const RegistrationForm = async ({ params }) => {
+  const isUser = await userProfileCompleted();
+  if (isUser) {
+    //redirect to /dashboard
+    console.log("redirected");
+    return redirect("/dashboard");
+  }
+
   const handleSubmitForm = async (formData) => {
     "use server";
 
