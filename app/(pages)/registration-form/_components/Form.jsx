@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import "./Form.css";
 import { redirect } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
+import { useFormStatus } from "react-dom";
 
 const Form = ({ role, handleSubmitForm }) => {
   if (role !== "1" && role !== "2") {
@@ -12,8 +13,10 @@ const Form = ({ role, handleSubmitForm }) => {
   const [name, setName] = useState("");
 
   const user = useUser();
+  const { pending } = useFormStatus();
 
   useEffect(() => {
+    console.log(pending);
     console.log(user);
     if (!user) {
       redirect("/sign-in");
@@ -21,7 +24,7 @@ const Form = ({ role, handleSubmitForm }) => {
       setName(user.user.fullName);
       console.log(name);
     }
-  }, [user]);
+  }, [user, pending]);
 
   return (
     <div className="container">
@@ -106,8 +109,8 @@ const Form = ({ role, handleSubmitForm }) => {
             </>
           )}
 
-          <div className="login">
-            <button>Submit</button>
+          <div className={`login ${pending ? "pending-btn" : ""}`}>
+            <button disabled={pending}>Submit</button>
           </div>
         </form>
       </div>

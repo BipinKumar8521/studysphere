@@ -111,3 +111,11 @@
     background-color: rgb(68, 59, 61);
     color: #fff;
 }
+
+.pending-btn {
+    background-color: #FFA500;
+    color: #fff;
+    border: none;
+    outline: none;
+    transition: .3s;
+}

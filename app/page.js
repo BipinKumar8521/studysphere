@@ -69,11 +69,16 @@ const Page = async () => {
                   />{" "}
                 </SignedIn>
               ) : (
-                <Link href="/decide">
-                  <button style={{ marginLeft: "10px" }} className="btn-5">
-                    Complete Profile
-                  </button>
-                </Link>
+                <SignedIn>
+                  <h3 style={{ color: "red", margin: "10px" }}>
+                    Your profile is incomplete
+                  </h3>
+                  <Link href="/decide">
+                    <button style={{ marginLeft: "10px" }} className="btn-5">
+                      Complete Profile
+                    </button>
+                  </Link>
+                </SignedIn>
               )}
             </div>
             <div className="image">
