@@ -1,33 +1,33 @@
-import React from 'react';
-import { useRouter } from 'next/navigation';
+// components/CourseCard.js
 
-const Course = ({ img, subject, description, price, author }) => {
-    const router = useRouter();
+import Link from "next/link";
+import PropTypes from 'prop-types';
 
-    const handleBuyNow = () => {
-        const bookData = { img, subject, description, price, author };
-        localStorage.setItem('selectedBook', JSON.stringify(bookData));
-        router.push('/payment');
-    };
-
+export default function CourseCard({ image, subject, description, price, instructor }) {
     return (
         <div className="course">
-            <img src={img} alt={`${subject} Course Image`} />
+            <img src={image} alt={`${subject} Course Image`} />
             <h2>{subject}</h2>
             <p>{description}</p>
             <div className="course-details" style={{ display: 'flex', justifyContent: 'space-between' }}>
                 <div>
                     <p>Price: ${price}</p>
-                    <p>Author: {author}</p>
+                    <p>Instructor: {instructor}</p>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
-                    <button className="btn-5" onClick={handleBuyNow}>
-                        <span>Buy Now</span>
-                    </button>
+                    <Link href="/payment">
+                        <button className="btn-5"><span>Buy Now</span></button>
+                    </Link>
                 </div>
             </div>
         </div>
     );
-};
+}
 
-export default Course;
+CourseCard.propTypes = {
+    image: PropTypes.string.isRequired,
+    subject: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    instructor: PropTypes.string.isRequired,
+};
