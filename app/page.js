@@ -66,7 +66,7 @@ const Page = async () => {
                   <SignOutButton
                     style={{ marginLeft: "10px" }}
                     className="btn-5"
-                  />{" "}
+                  />
                 </SignedIn>
               ) : (
                 <SignedIn>
@@ -78,6 +78,10 @@ const Page = async () => {
                       Complete Profile
                     </button>
                   </Link>
+                  <SignOutButton
+                    style={{ marginLeft: "10px" }}
+                    className="btn-5"
+                  />
                 </SignedIn>
               )}
             </div>
