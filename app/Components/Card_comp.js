@@ -16,7 +16,7 @@ export default function CourseCard({ image, subject, description, price, instruc
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
                     <Link href="/payment">
-                        <button className="btn-5"><span>Buy Now</span></button>
+                        <button className="btn-5"><span>Explore</span></button>
                     </Link>
                 </div>
             </div>
