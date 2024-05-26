@@ -1,16 +1,11 @@
-"use client";
+"use server";
 
-import React, { useEffect, useState } from 'react';
 import "./styles.css"
 
-const Page = () => {
-    const [submittedData, setSubmittedData] = useState(null);
+const Page = async () => {
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-
+    const handleSubmit = async (formData) => {
+        "use server";
         const data = {
             name: formData.get('name'),
             courseName: formData.get('courseName'),
@@ -21,36 +16,30 @@ const Page = () => {
         };
 
         console.log(data);
-        setSubmittedData(data);
-    };
+        const uploadData = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/api/course', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
 
-    useEffect(() => {
-        if (submittedData) {
-            const uploadData = async () => {
-                try {
-                    const response = await fetch('/api/course', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(submittedData)
-                    });
-
-                    if (response.ok) {
-                        console.log("Data successfully uploaded");
-                        // Handle success
-                    } else {
-                        console.error("Failed to upload data");
-                        // Handle error
-                    }
-                } catch (error) {
-                    console.error("Error during data upload", error);
+                if (response.ok) {
+                    console.log("Data successfully uploaded");
+                    // Handle success
+                } else {
+                    console.error("Failed to upload data");
                     // Handle error
                 }
-            };
-            uploadData();
-        }
-    }, [submittedData]);
+            } catch (error) {
+                console.error("Error during data upload", error);
+                // Handle error
+            }
+        };
+        uploadData();
+    };
 
     return (
         <div className="container">
@@ -58,7 +47,7 @@ const Page = () => {
                 <h1 id="title">Upload Course Form</h1>
             </header>
             <main>
-                <form id="survey-form" onSubmit={handleSubmit} method="post">
+                <form id="survey-form" action={handleSubmit} method="post">
                     <label id="name-label" htmlFor="name">
                         Name
                         <input
