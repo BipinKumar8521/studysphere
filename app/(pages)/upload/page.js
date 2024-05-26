@@ -90,10 +90,10 @@ const Page = async () => {
                         Which option best describes your current Course?
                         <select id="role" name="role" required>
                             <option value="" disabled selected>Select Standard</option>
-                            <option value="1">NEET</option>
-                            <option value="2">JEE Main</option>
-                            <option value="3">JEE Advanced</option>
-                            <option value="4">12th Board</option>
+                            <option value="NEET">NEET</option>
+                            <option value="JEE Main">JEE Main</option>
+                            <option value="JEE Advanced">JEE Advanced</option>
+                            <option value="12th Board">12th Board</option>
                         </select>
                     </label>
 

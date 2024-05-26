@@ -23,11 +23,3 @@ export default function CourseCard({ image, subject, description, price, instruc
         </div>
     );
 }
-
-CourseCard.propTypes = {
-    image: PropTypes.string.isRequired,
-    subject: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    instructor: PropTypes.string.isRequired,
-};
