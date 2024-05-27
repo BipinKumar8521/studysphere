@@ -10,14 +10,16 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^5.0.5",
-    "crypto": "^1.0.1",
     "axios": "^1.6.8",
+    "crypto": "^1.0.1",
     "mongoose": "^8.3.4",
     "next": "14.2.3",
+    "pdf-lib": "^1.17.1",
     "razorpay": "^2.9.3",
     "react": "^18",
     "react-dom": "^18",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "eslint": "^8",
