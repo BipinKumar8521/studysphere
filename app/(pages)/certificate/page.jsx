@@ -1,10 +1,6 @@
 "use client";
-import generateCertificate from "@/app/utils/generateCertificate";
-import { useUser } from "@clerk/nextjs";
 
 const CertificatePage = () => {
-  const user = useUser();
-
   const handleView = async () => {
     const data = await fetch("/api/certificate");
     const response = await data.json();

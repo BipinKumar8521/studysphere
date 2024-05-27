@@ -7,6 +7,23 @@ export default async function generateCertificate(name, verificationLink) {
   const pdfDoc = await PDFDocument.load(existingPdfBytes);
   const helveticaFont = await pdfDoc.embedFont(StandardFonts.TimesRomanItalic);
 
+  pdfDoc.setTitle("Certificate of Completion 🏆");
+  pdfDoc.setAuthor("Study Sphere");
+  pdfDoc.setSubject("Confirming the completion of a course 🎉");
+  pdfDoc.setKeywords([
+    "certificate",
+    "PDF",
+    "course",
+    "completion",
+    "digital",
+    "study",
+    "sphere",
+  ]);
+  pdfDoc.setProducer("Study Sphere (https://studysphere.com)");
+  pdfDoc.setCreator("Study Sphere (https://studysphere.com)");
+  pdfDoc.setCreationDate(new Date());
+  pdfDoc.setModificationDate(new Date());
+
   const pages = pdfDoc.getPages();
   const firstPage = pages[0];
   const { width, height } = firstPage.getSize();
