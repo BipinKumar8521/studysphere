@@ -20,14 +20,14 @@ const ProfilePage = async () => {
       <div className="profile-details">
         <h2>Name : {currUser.name}</h2>
 
-        <p>Email : {currUser.email}</p>
-        <p>Class : {currUser.class}</p>
-        <p>School/College Name : {currUser.schoolOrCollegeName}</p>
-        <span>Subjects : </span>
+        <h3>Email : {currUser.email}</h3>
+        <h3>Class : {currUser.class}</h3>
+        <h3>School/College Name : {currUser.schoolOrCollegeName}</h3>
+        <h3>Subjects : </h3>
         {currUser.subjects.map((subject) => (
-          <p>{subject}</p>
+          <h3 key={subject}>{subject}</h3>
         ))}
-        <p> Target Exam : {currUser.targetExam}</p>
+        <h3> Target Exam : {currUser.targetExam}</h3>
       </div>
     </div>
   );

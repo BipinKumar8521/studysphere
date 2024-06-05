@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from '@clerk/nextjs'
-import Script from 'next/script'
-
+import { ClerkProvider } from "@clerk/nextjs";
+import Script from "next/script";
+import { StreamVideoProvider } from "/providers/StreamClientProvider.jsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,23 +16,12 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en">
         <body className={inter.className}>
-
           <ClerkProvider>
-
-            {children}
+            <StreamVideoProvider>{children}</StreamVideoProvider>
           </ClerkProvider>
         </body>
       </html>
-      <Script src="https://checkout.razorpay.com/v1/checkout.js"
-      />
+      <Script src="https://checkout.razorpay.com/v1/checkout.js" />
     </>
-
   );
 }
-
-
-
-
-
-
-
