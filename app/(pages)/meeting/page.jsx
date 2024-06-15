@@ -36,7 +36,7 @@ const MeetingPage = () => {
           custom: {
             description,
           },
-        },
+        }, 
       });
       setCallDetails(call);
       router.push(`/meeting/${id}`);

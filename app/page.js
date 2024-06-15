@@ -95,6 +95,7 @@ const Page = async () => {
           </div>
         </div>
       </div>
+
       {/* End Landing Page */}
     </div>
   );
