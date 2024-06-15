@@ -270,3 +270,7 @@ ul {
   width: 100%;
   transition: 800ms ease all;
 }
+
+.str-video__video-preview {
+  height: 50vh;
+}

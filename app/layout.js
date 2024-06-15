@@ -2,7 +2,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Script from "next/script";
-import { StreamVideoProvider } from "/providers/StreamClientProvider.jsx";
+
+import "@stream-io/video-react-sdk/dist/css/styles.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,9 @@ export default function RootLayout({ children }) {
     <>
       <html lang="en">
         <body className={inter.className}>
+          {/* <ClerkProvider>
+            <StreamVideoProvider>{children}</StreamVideoProvider>
+          </ClerkProvider> */}
           <ClerkProvider>{children}</ClerkProvider>
         </body>
       </html>

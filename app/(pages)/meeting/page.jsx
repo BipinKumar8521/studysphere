@@ -14,7 +14,7 @@ const MeetingPage = () => {
     description: "",
     Link: "",
   });
-  const [callDetails, setCallDetails] = useState({});
+  const [callDetails, setCallDetails] = useState();
 
   const handleCreateMeeting = async () => {
     if (!client || !user) return;
@@ -36,10 +36,10 @@ const MeetingPage = () => {
           custom: {
             description,
           },
-        }, 
+        },
       });
       setCallDetails(call);
-      router.push(`/meeting/${id}`);
+      router.push(`/meeting/${call.id}`);
     } catch (error) {
       console.log(error);
     }

@@ -7,11 +7,14 @@ import { useEffect, useState } from "react";
 const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
 
 export const StreamVideoProvider = ({ children }) => {
-  const [videoClient, setVideoClient] = useState(null);
+  const [videoClient, setVideoClient] = useState();
   const { user, isLoaded } = useUser();
 
   useEffect(() => {
-    if (!isLoaded || !user) return;
+    if (!isLoaded || !user) {
+      console.log("User not loaded");
+      return;
+    }
     if (!apiKey) throw new Error("Stream API key is required");
 
     const client = new StreamVideoClient({
