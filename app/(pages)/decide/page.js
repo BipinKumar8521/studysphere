@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import userProfileCompleted from "@/app/utils/userProfileCompleted";
 export default async function Home() {
   const isUser = await userProfileCompleted();
+  console.log(isUser);
 
   if (isUser) {
     //redirect to /dashboard
