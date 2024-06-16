@@ -17,7 +17,7 @@ const courseSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    CourseStatus: {
+    role: {
         type: String,
         required: true,
         // enum: ["JEE", "NEET", "Boards"], 
