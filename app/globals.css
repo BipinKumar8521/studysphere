@@ -2,16 +2,18 @@
   padding: 0px;
   margin: 0px;
   text-decoration: none;
+  scroll-behavior: smooth;
 }
 
 .main-container {
   margin: 0px;
   padding: 0px;
-  background-color: rgb(2, 46, 60);
+  background-color: #615EFC;
   width: 100vw;
   height: 100vh;
   position: relative;
   overflow-x: hidden;
+  /* margin-bottom: 40px; */
 }
 
 .blur-circle1 {
@@ -175,7 +177,7 @@ ul {
 }
 
 .landing-page .content .info h1 {
-  color: #bbbbbb;
+  color: #e3e4ae;
   font-size: 44px;
 }
 
@@ -183,7 +185,7 @@ ul {
   margin: 0;
   line-height: 1.6;
   font-size: 20px;
-  color: #b3b3b3;
+  color: #ffffff;
 }
 
 /* .landing-page .content .info button {
