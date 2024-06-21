@@ -88,7 +88,7 @@ export default async function Home(){
             <i className="far fa-heart"></i>
           </div>
           <div className="image">
-            <img src="https://www.shutterstock.com/image-vector/cute-male-teacher-cartoon-character-260nw-2342219157.jpg" alt="" />
+            <img src="/images/30.png" alt="" />
           </div>
           <div className="product_info">
             <h2 className="product_name">Teacher/Educator</h2>
