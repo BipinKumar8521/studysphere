@@ -5,8 +5,13 @@ import styles from "./Form.module.css";
 const SubmitButton = () => {
   const { pending } = useFormStatus();
   return (
-    <div className={`${styles.login} `}>
-      <button disabled={pending}>{pending ? "Submitting..." : "Submit"}</button>
+    <div className={styles.login}>
+      <button
+        className={`${pending ? styles.pending_btn : styles.active_btn}`}
+        disabled={pending}
+      >
+        {pending ? "Submitting..." : "Submit"}
+      </button>
     </div>
   );
 };
