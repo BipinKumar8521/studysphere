@@ -4,6 +4,14 @@
   text-decoration: none;
 }
 
+:root {
+  --primary-color: #615EFC;
+  --secondary-color: #7E8EF1;
+  --tertiary-color: #D1D8C5;
+  --quaternary-color: #EEEEEE;
+
+}
+
 .main-container {
   margin: 0px;
   padding: 0px;
