@@ -24,9 +24,12 @@ const Page = async () => {
             />
             <ul className="links">
               {/* <li>Home</li> */}
-              <li>About Us</li>
+              <Link href="/about">About Us</Link>
               {/* <li>Work</li> */}
-              <li>Contact Us</li>
+              <Link href="/contact">Contact Us</Link>
+              <Link href="/privacy">Privacy Policy</Link>
+              <Link href="/terms"> Terms & Conditions</Link>
+              <Link href="/cancel">Cancellation/Refund Policies.</Link>
               <li>Our Achievements</li>
             </ul>
           </div>
