@@ -14,9 +14,9 @@ export default function CourseCard({ image, subject, description, price, instruc
                     <p>Price: ${price}</p>
                     <p>Instructor: {instructor}</p>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', marginTop: '20px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column'}}>
                     <button className="btn btn-success btn-sm" onClick={onEdit}>Edit</button>
-                    <button className="btn btn-danger btn-sm" onClick={onDelete}>Delete</button>
+                    <button className="btn btn-danger btn-sm" onClick={onDelete} style={{ marginTop: '5px' }}>Delete</button>
                 </div>
             </div>
         </div>
