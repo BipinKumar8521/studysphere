@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./styles.css";
+import CourseCard from "@/app/Components/CourseCard";
 
 const mockupData = [
   {
@@ -168,44 +169,20 @@ const CourseManager = () => {
         </div>
         <div className="col-sm-12 col-md-8">
           {messages && <div className={`alert alert-${editMode ? "info" : "success"}`}>{messages}</div>}
-          <table className="table table-striped mt-5">
-            <thead>
-              <tr>
-                <th>Course Name</th>
-                <th>Price</th>
-                <th>Duration</th>
-                <th>Option</th>
-                <th>Description</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {items.map((item, index) => (
-                <tr key={item.id}>
-                  <td>{item.courseName}</td>
-                  <td>{item.price}</td>
-                  <td>{item.duration}</td>
-                  <td>{item.option}</td>
-                  <td>{item.description}</td>
-                  <td>
-                    <a
-                      href="#"
-                      className="btn btn-success btn-sm"
-                      onClick={() => handleEdit(item)}
-                    >Edit</a>
-                  </td>
-                  <td>
-                    <a
-                      href="#"
-                      className="btn btn-danger btn-sm"
-                      onClick={() => handleDelete(item.id)}
-                    >Drop</a>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="course-list">
+            {items.map((item, index) => (
+              <CourseCard
+                key={item.id}
+                image="/images/2.png" // Replace with the actual image path if available
+                subject={item.courseName}
+                description={item.description}
+                price={item.price}
+                instructor="Instructor Name" // Replace with actual instructor name if available
+                onEdit={() => handleEdit(item)}
+                onDelete={() => handleDelete(item.id)}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

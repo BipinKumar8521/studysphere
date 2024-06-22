@@ -12,7 +12,7 @@ export default async function Home() {
 
   const courses = [
     {
-      image: "https://source.unsplash.com/300x200/?physics, code",
+      image: "/images/2.png",
       subject: "Physics",
       description:
         "Learn the fundamentals of HTML including tags, attributes, and semantic markup.",
@@ -20,7 +20,7 @@ export default async function Home() {
       instructor: "Asish Sir",
     },
     {
-      image: "https://source.unsplash.com/300x200/?chemistry, code",
+      image: "/images/2.png",
       subject: "Chemistry",
       description:
         "Master CSS styling techniques such as selectors, box model, flexbox, and grid.",
@@ -28,7 +28,7 @@ export default async function Home() {
       instructor: "Asish Sir",
     },
     {
-      image: "https://source.unsplash.com/300x200/?mathematics, code",
+      image: "/images/2.png",
       subject: "Mathematics",
       description:
         "Explore the core concepts of JavaScript including variables, functions, and loops.",
@@ -36,7 +36,7 @@ export default async function Home() {
       instructor: "Asish Sir",
     },
     {
-      image: "https://source.unsplash.com/300x200/?react, code",
+      image: "/images/2.png",
       subject: "React Development",
       description:
         "Build dynamic web applications with React.js, including state management.",
@@ -44,7 +44,7 @@ export default async function Home() {
       instructor: "Asish Sir",
     },
     {
-      image: "https://source.unsplash.com/300x200/?next.js, code",
+      image: "/images/2.png",
       subject: "Next.js Essentials",
       description:
         "Discover the power of Next.js for server-side rendering, routing, and API integration.",
@@ -52,7 +52,7 @@ export default async function Home() {
       instructor: "Asish Sir",
     },
     {
-      image: "https://source.unsplash.com/300x200/?typescript, code",
+      image: "/images/2.png",
       subject: "TypeScript",
       description:
         "Learn TypeScript to enhance the development of scalable web applications.",
