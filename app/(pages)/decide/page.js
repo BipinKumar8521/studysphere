@@ -81,7 +81,7 @@ export default async function Home(){
       return redirect("/dashboard");
     }
   return (
-    <div className="container">
+    <div className="container_decide">
       <div className="product_cards">
         <div className="product_card">
           <div className="add_to_wishlist">
