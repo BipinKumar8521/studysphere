@@ -98,7 +98,7 @@ const CourseManager = () => {
   };
 
   return (
-    <div className="container" id="course-crud-container">
+    <div className="container_teacher" id="course-crud-container">
       <div className="title text-center">
         <h1><strong>Course Manager</strong></h1>
       </div>
