@@ -63,7 +63,7 @@ export default async function Home() {
 
   return (
     <div>
-      <header>
+      <header className="dash_page">
         <h1>StudySphere</h1>
       </header>
 
@@ -73,7 +73,7 @@ export default async function Home() {
         {/* <a href="#">About</a>
                 <a href="#">Contact</a> */}
       </nav>
-      <div className="container">
+      <div className="container_dashboard">
         <h2 className="container-heading">Featured Courses</h2>
         <div className="course-list">
           {courses.map((course, index) => (

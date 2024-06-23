@@ -1,19 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: "Roboto", sans-serif;
-    background-color: #f4f4f4;
-}
-
-.container {
+.container_dashboard {
     max-width: 1170px;
     margin: auto;
     overflow: hidden;
     padding: 0 20px;
+    font-family: cursive;
 }
 
 .container-heading {
@@ -45,7 +36,7 @@ body {
 
 /* Header */
 
-header {
+.dash_page {
     background: #8451ab;
     box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
     position: relative;
@@ -141,7 +132,7 @@ nav a:hover::before {
     margin: 10px;
 }
 
-p {
+footer p {
     color: #777;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
