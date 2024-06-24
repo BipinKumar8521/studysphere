@@ -1,0 +1,93 @@
+.sidebar {
+    display: none;
+    height: 100vh;
+    width: 72px;
+    background-color: white;
+    padding: 4px;
+    box-shadow: 0 4px 6px -1px rgba(103, 114, 229, 0.5);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding-top: 8px;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-nav_elements {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.sidebar-nav_element {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    width: 100%;
+    white-space: nowrap;
+    border-radius: 9999px;
+    background-size: cover;
+    transition: all 0.3s;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    width: 100%;
+    gap: 4px;
+    padding: 2px;
+}
+
+.sidebarContent {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.navElements {
+    list-style: none;
+    padding: 0;
+}
+
+.navElement {
+    margin-bottom: 8px;
+}
+
+.navElementActive {
+    background: linear-gradient(90deg, rgba(91, 33, 182, 1) 0%, rgba(129, 52, 175, 1) 100%);
+    color: white;
+}
+
+.navElementInactive {
+    color: #4a5568;
+    /* gray-700 */
+}
+
+
+.imageActive {
+    filter: brightness(200%);
+}
+
+.userButton {
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    gap: 8px;
+}
+
+.loginButton {
+    background: linear-gradient(90deg, rgba(91, 33, 182, 1) 0%, rgba(129, 52, 175, 1) 100%);
+    color: white;
+    /* Additional button styles */
+}

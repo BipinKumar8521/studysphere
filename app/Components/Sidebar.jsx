@@ -5,13 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import styles from "./Sidebar.module.css"; // Ensure this path matches your CSS file's location
 
 const Sidebar = () => {
   const pathname = usePathname();
   return (
-    <aside className="sidebar">
-      <div className="flex size-full flex-col gap-4">
-        <Link href="/" className="sidebar-logo">
+    <aside className={styles.sidebar}>
+      <div className={styles.sidebarContent}>
+        <Link href="/" className={styles.sidebarLogo}>
           <Image
             src="/assets/images/logo-text.svg"
             alt="logo"
@@ -20,28 +21,28 @@ const Sidebar = () => {
           />
         </Link>
 
-        <nav className="sidebar-nav">
+        <nav className={styles.sidebarNav}>
           <SignedIn>
-            <ul className="sidebar-nav_elements">
+            <ul className={styles.navElements}>
               {navLinks.slice(0, 6).map((link) => {
                 const isActive = link.route === pathname;
 
                 return (
                   <li
                     key={link.label}
-                    className={`sidebar-nav_element group ${
+                    className={`${styles.navElement} ${
                       isActive
-                        ? "bg-purple-gradient text-white"
-                        : "text-gray-700"
+                        ? styles.navElementActive
+                        : styles.navElementInactive
                     }`}
                   >
-                    <Link href={link.route} className="sidebar-link">
+                    <Link href={link.route} className={styles.sidebarLink}>
                       <Image
                         src={link.icon}
                         alt={link.label}
                         width={24}
                         height={24}
-                        className={`${isActive && "brightness-200"}`}
+                        className={`${isActive ? styles.imageActive : ""}`}
                       />
                       {link.label}
                     </Link>
@@ -49,41 +50,41 @@ const Sidebar = () => {
                 );
               })}
             </ul>
-            <ul className="sidebar-nav_elements">
+            <ul className={styles.navElements}>
               {navLinks.slice(6).map((link) => {
                 const isActive = link.route === pathname;
 
                 return (
                   <li
                     key={link.label}
-                    className={`sidebar-nav_element group ${
+                    className={`${styles.navElement} ${
                       isActive
-                        ? "bg-purple-gradient text-white"
-                        : "text-gray-700"
+                        ? styles.navElementActive
+                        : styles.navElementInactive
                     }`}
                   >
-                    <Link href={link.route} className="sidebar-link">
+                    <Link href={link.route} className={styles.sidebarLink}>
                       <Image
                         src={link.icon}
                         alt={link.label}
                         width={24}
                         height={24}
-                        className={`${isActive && "brightness-200"}`}
+                        className={`${isActive ? styles.imageActive : ""}`}
                       />
                       {link.label}
                     </Link>
                   </li>
                 );
               })}
-              <li className="flex-center cursor-pointer p-4 gap-2">
+              <li className={styles.userButton}>
                 <UserButton afterSignOutUrl="/sign-in" showName />
               </li>
             </ul>
           </SignedIn>
 
           <SignedOut>
-            <button className="bg-purple-gradient button bg-cover">
-              <Link href="/sign-in" className="sidebar-link">
+            <button className={styles.loginButton}>
+              <Link href="/sign-in" className={styles.sidebarLink}>
                 Login
               </Link>
             </button>
