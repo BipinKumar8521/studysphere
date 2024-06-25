@@ -1,6 +1,5 @@
 import { redirect } from "next/navigation";
 import Form from "../_components/Form";
-import "./style.css";
 import connectDB from "@/app/db/connectDB";
 import Teacher from "@/app/db/schema/teacher";
 import Student from "@/app/db/schema/student";

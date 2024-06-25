@@ -2,7 +2,7 @@ import "./styles.css";
 import { UserButton } from "@clerk/nextjs";
 import userProfileCompleted from "@/app/utils/userProfileCompleted";
 import { redirect } from "next/navigation";
-import CourseCard from "../../Components/Card_comp";
+import CourseCard from "@/app/Components/Card_comp";
 
 export default async function Home() {
   const isUser = await userProfileCompleted();
