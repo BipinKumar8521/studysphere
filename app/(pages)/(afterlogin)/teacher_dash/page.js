@@ -2,7 +2,7 @@
 
 import "./styles.css";
 import Link from "next/link";
-import CourseCard from "../../Components/Card_comp";
+import CourseCard from "../../../Components/Card_comp";
 
 export default function Home() {
   const courses = [
