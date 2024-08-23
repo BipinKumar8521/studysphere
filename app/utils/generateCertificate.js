@@ -1,7 +1,7 @@
 import { degrees, PDFDocument, rgb, StandardFonts } from "pdf-lib";
 
 export default async function generateCertificate(name, verificationLink) {
-  const url = "http://localhost:3000/certificate.pdf";
+  const url = `${NEXT_PUBLIC_API_URL}/certificate.pdf`;
   const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
 
   const pdfDoc = await PDFDocument.load(existingPdfBytes);
